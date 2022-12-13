@@ -36,33 +36,43 @@ There are four basic steps to a genetic algorithm:
     \item Mutation operation
 \end{enumerate}
 
+I used most of the same code from the Thomson java file with a few key 
+differences. For each point I found a list of the points closest to it with 
+equal distance and made sure that the more that were equally distant it would
+reduce the energy cost. This pushes the algorithm to find shapes with regular 
+polygons as faces.
+
+\subsection{Tetrahedron}
 \begin{figure}[H]
     \centerline{\includegraphics [width=3 in] {img/tetra.png}}
-    \caption{Condition (a) Initial} \label{q1}
+    \caption{Tetrahedron} \label{q1}
 \end{figure}
 
+\subsection{Octahedron}
 \begin{figure}[H]
     \centerline{\includegraphics [width=3 in] {img/octa.png}}
-    \caption{Condition (b) Initial} \label{q1}
+    \caption{Octahedron} \label{q1}
 \end{figure}
 
+\subsection{Cube}
 \begin{figure}[H]
     \centerline{\includegraphics [width=3 in] {img/cube.png}}
-    \caption{Condition (a) Results} \label{q1}
+    \caption{Cube} \label{q1}
 \end{figure}
 
+\subsection{Icosahedron}
 \begin{figure}[H]
     \centerline{\includegraphics [width=3 in] {img/icosa.png}}
-    \caption{Condition (b) Results} \label{q1}
+    \caption{Icosahedron} \label{q1}
 \end{figure}
 
+\subsection{Dodecahedron}
 \begin{figure}[H]
     \centerline{\includegraphics [width=3 in] {img/dodeca.png}}
-    \caption{Condition (b) Results} \label{q1}
+    \caption{Dodecahedron} \label{q1}
 \end{figure}
 
 
-\section{Problem 2}
 \begin{thebibliography}{99}
 
 \bibitem{thecoursetext} T. Pang, \emph{Introduction to Computational Physics},
