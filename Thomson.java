@@ -33,7 +33,7 @@ public class Thomson {
     final static int nr = ng / 2; // number of parents or kids
     final static int ne = 1; // number of elite states
     // final static int gmax = 60000; // max number of generations
-    final static int gmax = 600; // max number of generations
+    final static int gmax = 10000; // max number of generations
     final static double pm = 1.0 / 100; // mutation percentage
     static boolean c[][] = new boolean[ng][nd]; // chromosomes
     static double f[] = new double[ng]; // cost function
@@ -48,8 +48,6 @@ public class Thomson {
 
         initiate();
         int g = 0;
-        boolean contd = true;
-        // while (contd && g < gmax) {
         while (g < gmax) {
             System.out.println("g: " + g);
             ++g;
@@ -57,7 +55,6 @@ public class Thomson {
             cross();
             rank();
             mutate();
-            // contd = converge();
         }
         export();
     }
@@ -198,7 +195,7 @@ public class Thomson {
         // double rescale = 2.5;
 
         // Write out the coordinates of the best chromosome
-        PrintWriter q = new PrintWriter(new FileOutputStream("xyz" + nc + ".data"), true);
+        PrintWriter q = new PrintWriter(new FileOutputStream("data/xyz" + nc + ".data"), true);
         q.println("x y z");
         for (int i = 0; i < nd; ++i)
             w[i] = c[0][i];
@@ -368,9 +365,5 @@ public class Thomson {
             }
         }
     }
-
-    // Method to check the convergence.
-
-    // public static boolean converge(){ }
 
 }
