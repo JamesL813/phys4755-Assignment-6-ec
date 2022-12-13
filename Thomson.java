@@ -49,7 +49,7 @@ public class Thomson {
         initiate();
         int g = 0;
         while (g < gmax) {
-            System.out.println("g: " + g);
+            System.out.println("g: " + g + "/" + gmax);
             ++g;
             select();
             cross();
