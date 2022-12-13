@@ -24,7 +24,7 @@ import java.io.*;
 import java.util.*;
 
 public class Thomson {
-    final static int nc = 4; // number of charges
+    final static int nc = 8; // number of charges
     final static int nv = 2 * nc; // number of variables
     final static int nb = 64; // number of bits used in encoding
     final static int nd = nv * nb;
