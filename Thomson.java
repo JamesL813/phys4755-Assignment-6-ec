@@ -33,7 +33,7 @@ public class Thomson {
     final static int nr = ng / 2; // number of parents or kids
     final static int ne = 1; // number of elite states
     // final static int gmax = 60000; // max number of generations
-    final static int gmax = 10000; // max number of generations
+    final static int gmax = 5000; // max number of generations
     final static double pm = 1.0 / 100; // mutation percentage
     static boolean c[][] = new boolean[ng][nd]; // chromosomes
     static double f[] = new double[ng]; // cost function
