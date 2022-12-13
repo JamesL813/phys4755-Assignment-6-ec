@@ -24,7 +24,7 @@ import java.io.*;
 import java.util.*;
 
 public class Thomson {
-    final static int nc = 20; // number of charges
+    static int nc = 20; // number of charges
     final static int nv = 2 * nc; // number of variables
     final static int nb = 64; // number of bits used in encoding
     final static int nd = nv * nb;
@@ -39,6 +39,13 @@ public class Thomson {
     static double f[] = new double[ng]; // cost function
 
     public static void main(String argv[]) throws FileNotFoundException {
+
+        if (argv.length >= 1) {
+            nc = Integer.parseInt(argv[0]);
+        } else {
+            nc = 20;
+        }
+
         initiate();
         int g = 0;
         boolean contd = true;
@@ -191,7 +198,7 @@ public class Thomson {
         // double rescale = 2.5;
 
         // Write out the coordinates of the best chromosome
-        PrintWriter q = new PrintWriter(new FileOutputStream("xyz.data"), true);
+        PrintWriter q = new PrintWriter(new FileOutputStream("xyz" + nc + ".data"), true);
         q.println("x y z");
         for (int i = 0; i < nd; ++i)
             w[i] = c[0][i];
@@ -207,6 +214,7 @@ public class Thomson {
             q.println(x[i] + " " + y[i] + " " + z[i]);
             k += 2;
         }
+        q.close();
         // Print out the energy of the best chromosome
         for (int i = 0; i < ng; ++i)
             System.out.println("Energy: " + f[i]);
